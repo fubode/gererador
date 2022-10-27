@@ -31,7 +31,8 @@ class Solicitud {
         String turno_salida = "TARDE";
         String fecha_retorno = fecha;
         String turno_retorno = "TARDE";
-        String dias = list.get(12);
+        String fecha_ingreso = list.get(9);
+        String dias = diasTomadas(fecha_ingreso,list.get(12));
         String estado = "ACEPTADO";
         String tipo = "VACACION";
         String detalle_compensacion = "PRIMERA SOLICITUD DE VACACION CREADA";
@@ -49,7 +50,7 @@ class Solicitud {
                 + " detalle_compensacion,"
                 + " codigo_funcionario) "
                 + "VALUES ('"+codigo_solicitud+"',"
-                +0+",'"
+                +3000+",'"
                 +fecha_solicitud+"','"
                 +fecha_salida+"','"
                 +turno_salida+"','"
@@ -65,5 +66,13 @@ class Solicitud {
 
     public ArrayList<String> getList() {
         return list;
+    }
+
+    private String diasTomadas(String fecha_ingreso, String dias) {
+        UsuarioAD usuario = new UsuarioAD(fecha_ingreso, "0", "NINGUNO");
+        
+        double diasTomadas = usuario.saldoVacaciones()-Double.parseDouble(dias);
+        
+        return String.valueOf(diasTomadas);
     }
 }

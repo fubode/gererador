@@ -32,7 +32,7 @@ public class main {
         ConvertidorExcel excel = new ConvertidorExcel();
         //excel.sqlEntidades(rutaArchivoExcel);
         //excel.sqlCargo("D:\\FUBODE\\cargos.xlsx");
-        excel.sqlFuncionarios("D:\\FUBODE\\info.xlsx");
+        //excel.sqlFuncionarios("D:\\FUBODE\\info.xlsx");
         //excel.listaCargos("D:\\FUBODE\\info.xlsx");
         System.out.println("");
         System.out.println("");
@@ -43,5 +43,9 @@ public class main {
         EncriptadorAES eS = new EncriptadorAES();
         String deString = eS.desencriptar(decodificado, claveEncriptacion);
         System.out.println(deString);*/
+        //Date fechaActual = new Date().fechaActual();
+        //Date fecha = fechaActual.fechaActual();
+        //Date date = new Date();
+        //System.out.println(fecha.fechaActual());
     }
 }

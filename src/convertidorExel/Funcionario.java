@@ -35,6 +35,8 @@ class Funcionario {
         final String claveEncriptacion = "secreto!";
         String passEncriptado = encriptadorAES.encriptar(ci, claveEncriptacion);
         
+        
+        
         return "INSERT INTO public.funcionario("
                 + " codigo_sai, apellido, nombre, fecha_ingreso, ci, correo, fecha_salida, supervisor, entidad, cargo,expedido)"
                 + " VALUES (" + list.get(0) + ", '" + list.get(2) + "', '" + list.get(3) + "', '" + list.get(9) + "', " + ci + ", '" + correo + "', '1750-1-1', " + list.get(11) + ", " + list.get(1) + ", " + list.get(4) + ",'" + list.get(8) + "');"
