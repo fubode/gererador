@@ -23,7 +23,7 @@ class Solicitud {
     }
 
     public String senteceSql() {
-        String fecha = "2020-10-1";
+        String fecha = "2023-02-04";
         String codigo = list.get(0);
         String codigo_solicitud = "SV-"+codigo+"-102022-"+list.get(13);
         String fecha_solicitud = fecha;
@@ -32,7 +32,8 @@ class Solicitud {
         String fecha_retorno = fecha;
         String turno_retorno = "TARDE";
         String fecha_ingreso = list.get(9);
-        String dias = diasTomadas(fecha_ingreso,list.get(12));
+        //String dias = diasTomadas(fecha_ingreso,list.get(12));
+        String dias = list.get(12);
         String estado = "ACEPTADO";
         String tipo = "VACACION";
         String detalle_compensacion = "PRIMERA SOLICITUD DE VACACION CREADA";

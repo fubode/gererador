@@ -15,6 +15,9 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 /**
  *
@@ -165,6 +168,11 @@ public class ConvertidorExcel {
 
     void sqlFuncionarios(String ruta) {
         try {
+            File file = new File("D:\\FUBODE\\funcionarios.txt");
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+            FileWriter writer = new FileWriter(file);
             Iterator iterator = getIterator(ruta);
             ArrayList<Funcionario> list = new ArrayList<>();
             while (iterator.hasNext()) {
@@ -180,6 +188,7 @@ public class ConvertidorExcel {
                 funcionario = null;
             }
             for (Funcionario funcionario : list) {
+                writer.write(funcionario.senteceSql()+"\n");
                 System.out.println(funcionario.senteceSql());
             }
         } catch (Exception e) {
