@@ -23,9 +23,10 @@ class Solicitud {
     }
 
     public String senteceSql() {
-        String fecha = "2023-02-04";
+        String fecha = "2023-05-08";
+        String fecha_estado = "2023-05-08";
         String codigo = list.get(0);
-        String codigo_solicitud = "SV-"+codigo+"-102022-"+list.get(13);
+        String codigo_solicitud = "SV-"+codigo+"-080523-"+list.get(13);
         String fecha_solicitud = fecha;
         String fecha_salida = fecha;
         String turno_salida = "TARDE";
@@ -41,6 +42,7 @@ class Solicitud {
                 + "codigo_solicitud,"
                 + "supervisor,"
                 + " fecha_solicitud,"
+                + " fecha_estado,"
                 + " fecha_salida,"
                 + " turno_salida,"
                 + " fecha_retorno,"
@@ -53,6 +55,7 @@ class Solicitud {
                 + "VALUES ('"+codigo_solicitud+"',"
                 +3000+",'"
                 +fecha_solicitud+"','"
+                +fecha_estado+"','"
                 +fecha_salida+"','"
                 +turno_salida+"','"
                 +fecha_retorno+"','"
