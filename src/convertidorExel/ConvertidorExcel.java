@@ -213,7 +213,8 @@ public class ConvertidorExcel {
                 solicitud = null;
             }
             for (Solicitud solicitud : list) {
-                System.out.println(solicitud.senteceSql());
+                String sentence = solicitud.senteceSql();
+                System.out.println(sentence);
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
